@@ -1,0 +1,21 @@
+{% extends "_inject.html" %}
+{% block content %}
+
+
+	<body style="background-color:black;">
+    <div class="container">
+      &nbsp
+      &nbsp
+      &nbsp
+      &nbsp
+        <h3 class ="c6">Upload media file</h3>
+        &nbsp
+        <form method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+          <input type="file" name="document" value="">
+          <button type="submit" >Upload file</button>
+        </form>
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load static %}
+{% load bootstrap4 %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"  integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/master.css'%}">
+    <link rel="stylesheet" href="{% static 'css/master2.css'%}">
+    <link rel="stylesheet" href="{% static 'css/master3.css'%}">
+
+
+
+  </head>
+  <body>
+
+
+
+    <nav class="navbar navbar-expand-lg bg-dark mynav" role="navigation" id="navbar">
+  <div class="container">
+    <div class="navbar-nav align-items-center">
+      <a class="navbar-brand mynav" href="{% url 'homepage' %}">Homepage</a>
+    </div>
+    <div class="navbar-nav ml-auto">
+      {% if user.is_authenticated %}
+        <a class="nav-item nav-link" href="{% url 'upload' %}" class="btn btn-simple">Upload</a>
+        <a class="nav-item nav-link" href="{% url 'chat:index' %}" class="btn btn-simple">Chat</a>
+        <a class="nav-item nav-link" href="{% url 'createpost' %}" class="btn btn-simple">Create Post</a>
+        <a class="nav-item nav-link" href="{% url 'logout' %}" class="btn btn-simple">Log out</a>
+      {% else %}
+        <a class="nav-item nav-link" href="{% url 'login' %}" class="btn btn-simple">Log in</a>
+        <a class="nav-item nav-link" href="{% url 'register' %}" class="btn btn-simple">Sign up</a>
+      {% endif %}
+    </div>
+  </div>
+</nav>
+
+
+            {% block content %}
+
+              {% endblock %}
+
+
+  </body>
+</html>

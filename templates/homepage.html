@@ -1,0 +1,37 @@
+{% extends "_inject.html" %}
+{% block content %}
+
+<!--
+  <div class="col-md-8">
+	{% if post.count == 0 %}
+	<h2>No posts in this group yet!</h2>
+
+	{% else %} -->
+
+
+
+
+				{% if user.is_authenticated %}
+	<body style="background-color:black;">
+				<div class="container">
+							{% for p in object_list %}
+
+								{% include "_post.html" %}
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+							{% endfor %}
+
+					  </div>
+				  {% else %}
+					<div class="wrapper">
+						<h1 class="title">Please login first</h1>
+					</div>
+
+				  {% endif %}
+					{% endif %}
+
+
+
+{% endblock %}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+{% extends "_inject.html" %}
+{% load bootstrap4 %}
+{% load staticfiles %}
+{% block content %}
+<div class="wrapper">
+    <div class="container">
+      <!-- <div class="jumbotron"> -->
+
+
+      <h1 class="c1">Login here</h1>
+
+        <form method="POST" class="form">
+          {% csrf_token %}
+          {% bootstrap_form form %}
+          {% buttons %}
+            <button type="submit" class="btn btn-primary">Login</button>
+          {% endbuttons %}
+        </form>
+
+        <!-- </div> -->
+
+      </div>
+  </div>
+
+{% endblock %}
